@@ -62,9 +62,9 @@ char* (*find_function(char k))(va_list)
 	int i = 0;
 	format_specifier keys[] = {
 		{'c', print_char},
-		// {'s', print_string},
-		// {'i', print_dec},
-		// {'d', print_dec},
+		{'s', print_string},
+		{'i', print_dec},
+		{'d', print_dec},
 		// {'r', print_rev},
 		// {'b', print_bin},
 		// {'u', print_unsig},

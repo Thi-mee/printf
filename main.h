@@ -20,6 +20,8 @@ char *create_buffer(void);
 int check_buffer_overflow(char *buffer, int len);
 void write_buffer(char *buffer, int len, va_list argList);
 char* (*find_function(char k))(va_list);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 
 /* printf functions */
