@@ -7,10 +7,11 @@
 
 /**
  * struct types - struct
- * @sc: identifier of what to print
+ * @id: identifier of what to print
  * @func: function 
  */
-typedef struct types{
+typedef struct types
+{
 	char id;
 	char* (*func)(va_list);
 } format_specifier;
@@ -34,5 +35,6 @@ char *print_bin(va_list b);
 char *print_unsig(va_list u);
 char *print_octal(va_list o);
 char *print_rot13(va_list R);
+
 
 #endif
