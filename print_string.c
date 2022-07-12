@@ -2,7 +2,7 @@
 
 /**
  * print_s - takes string and return string
- * @list: string
+ * @str: string
  * Return: string
  */
 char *print_string(va_list str)

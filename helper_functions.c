@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * create_buffer - creates buffer to hold string until it's ready for print
  * Return: pointer to buffer created
@@ -14,7 +13,6 @@ char *create_buffer(void)
 		return (NULL);
 	return (buffer);
 }
-
 
 /**
  * check_buffer_overflow - if writing over buffer space,
@@ -33,7 +31,6 @@ int check_buffer_overflow(char *buffer, int len)
 	return (len);
 }
 
-
 /**
  * write_buffer - prints buffer, then frees it and frees va_list
  * @buffer: buffer holding print-ables
@@ -45,19 +42,19 @@ void write_buffer(char *buffer, int len, va_list list)
 	char *buff;
 
 	buff = realloc(buffer, len); /* realloc to correct size */
-	write(1, buff, len); /* print */
+	write(1, buff, len);		 /* print */
 
-	free(buff); va_end(list);
+	free(buff);
+	va_end(list);
 }
 
-
 /**
-  * find_function - function that finds formats for _printf
-  * calls the corresponding function.
-  * @format: format (char, string, int, decimal)
-  * Return: NULL or function associated ;
-  */
-char* (*find_function(char k))(va_list)
+ * find_function - function that finds formats for _printf
+ * calls the corresponding function.
+ * @k: format (char, string, int, decimal)
+ * Return: NULL or function associated ;
+ */
+char *(*find_function(char k))(va_list)
 {
 	int i = 0;
 	format_specifier keys[] = {
@@ -70,8 +67,7 @@ char* (*find_function(char k))(va_list)
 		// {'u', print_unsig},
 		// {'o', print_octal},
 		// {'R', print_rot13},
-		{'\0', NULL}
-	};
+		{'\0', NULL}};
 
 	while (keys[i].id != '\0')
 	{

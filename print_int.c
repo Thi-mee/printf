@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * _itos - makes an int a string
  * @div: multiple of 10
@@ -42,7 +41,7 @@ char *_itos(int div, int length, int n)
 
 /**
  * print_d - gets length to put in _itos
- * @list: takes arg
+ * @d: takes arg
  * Return: integar string
  **/
 char *print_dec(va_list d)
