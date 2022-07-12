@@ -40,7 +40,7 @@ char *_itos(int div, int length, int n)
 }
 
 /**
- * print_d - gets length to put in _itos
+ * print_dec - gets length to put in _itos
  * @d: takes arg
  * Return: integar string
  **/
