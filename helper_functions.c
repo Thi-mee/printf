@@ -62,11 +62,11 @@ char *(*find_function(char k))(va_list)
 		{'s', print_string},
 		{'i', print_dec},
 		{'d', print_dec},
-		/* {'r', print_rev}, */
-		/* {'b', print_bin}, */
-		/* {'u', print_unsig}, */
-		/* {'o', print_octal}, */
-		/* {'R', print_rot13}, */
+		{'r', print_rev},
+		{'b', print_bin},
+		{'u', print_unsig},
+		{'o', print_octal},
+		{'R', print_rot13},
 		{'\0', NULL}};
 
 	while (keys[i].id != '\0')

@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * _itos - makes an int a string
  * @div: multiple of 10
@@ -38,6 +39,7 @@ char *_itos(int div, int length, int n)
 	str[i] = '\0';
 	return (str);
 }
+
 
 /**
  * print_dec - gets length to put in _itos

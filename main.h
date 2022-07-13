@@ -36,5 +36,4 @@ char *print_unsig(va_list u);
 char *print_octal(va_list o);
 char *print_rot13(va_list R);
 
-
 #endif
