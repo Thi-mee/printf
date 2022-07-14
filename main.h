@@ -30,10 +30,14 @@ int _printf(const char *format, ...);
 char *print_char(va_list c);
 char *print_string(va_list s);
 char *print_dec(va_list d);
-char *print_rev(va_list r);
-char *print_bin(va_list b);
 char *print_unsig(va_list u);
+char *print_bin(va_list b);
 char *print_octal(va_list o);
+char *print_hex(va_list x);
+char *print_hexa(va_list X);
+char *print_address(va_list addr);
+char *print_rev(va_list r);
 char *print_rot13(va_list R);
+char *print_percent(va_list pc);
 
 #endif

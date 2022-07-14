@@ -9,13 +9,13 @@
 
 char *print_rev(va_list r)
 {
-        char *rev;
+    char *rev;
 	char *str;
 	int i = 0, len, j;
 
 	str = va_arg(r, char *); /* store argument to access only once */
 	if (str == NULL)
-		str = ")llun(";
+		str = ")LLUN(";
 
 	len = _strlen(str);
 

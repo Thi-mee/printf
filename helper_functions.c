@@ -66,7 +66,11 @@ char *(*find_function(char k))(va_list)
 		{'b', print_bin},
 		{'u', print_unsig},
 		{'o', print_octal},
+		{'x', print_hex},
+		{'X', print_hexa},
+		{'p', print_address},
 		{'R', print_rot13},
+		{'%', print_percent},
 		{'\0', NULL}};
 
 	while (keys[i].id != '\0')
