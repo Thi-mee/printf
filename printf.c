@@ -36,40 +36,46 @@ int _printf(const char *format, ...)
 				free(buffer);
 				return (-1);
 			}
-			f = find_function(format[i]); /* grab function */
-			if (f == NULL)				  /* handle fake id */
+			if (format[i] == '%') /* handle double %'s */
 			{
-				va_end(argList);
-				free(buffer);
-				return (-1);
+				len = check_buffer_overflow(buffer, len);
+				buffer[len++] = format[i];
+				total_len++;
 			}
-			else /* return string, copy to buffer */
+			else
 			{
-				str = f(argList);
-				if (str == NULL)
-				{
-					va_end(argList);
-					free(buffer);
-					return (-1);
-				}
-				if (format[i] == 'c' && str[0] == '\0')
+				f = get_func(format[i]); /* grab function */
+				if (f == NULL)  /* handle fake id */
 				{
 					len = check_buffer_overflow(buffer, len);
-					buffer[len++] = '\0';
-					total_len++;
+					buffer[len++] = '%'; total_len++;
+					buffer[len++] = format[i]; total_len++;
 				}
-				j = 0;
-				while (str[j] != '\0')
+				else /* return string, copy to buffer */
 				{
-					len = check_buffer_overflow(buffer, len);
-					buffer[len++] = str[j];
-					total_len++;
-					j++;
+					str = f(argList);
+					if (str == NULL)
+					{
+						va_end(argList);
+						free(buffer);
+						return (-1);
+					}
+					if (format[i] == 'c' && str[0] == '\0')
+					{
+						len = check_buffer_overflow(buffer, len);
+						buffer[len++] = '\0';
+						total_len++;
+					}
+					j = 0;
+					while (str[j] != '\0')
+					{
+						len = check_buffer_overflow(buffer, len);
+						buffer[len++] = str[j];
+						total_len++; j++;
+					}
+					free(str);
 				}
-				free(str);
-			}
-			
-			i++;
+			} i++;
 		}
 	}
 	write_buffer(buffer, len, argList);
