@@ -121,8 +121,8 @@ char *print_dec(va_list d)
  **/
 char *print_unsig(va_list u)
 {
-	int length, temp;
-	long n, div;
+	int length;
+	long n, div, temp;
 
 	n = va_arg(u, long);
 	temp = n;
